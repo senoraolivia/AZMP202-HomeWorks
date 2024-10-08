@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" maxlength="5" placeholder="name"><br>
+        <label for="fav number">Fav number:</label>
+        <input type="number" id="fav number" name="fav number" min="6" max="30" placeholder="fav number"><br>
+        <label for="name">Email:</label>
+        <input type="text" id="email" name="email" placeholder="user@email.com"><br>
+        <label for="password">Password:</label>
+        <input type="number" id="password" name="password" placeholder="xxxxxxxx"><br>
+        <label for="fname">Gender: </label>
+          <input type="radio" id="Male" name="gender" value="Male">
+          <label for="Male" selected>Male</label>
+          <input type="radio" id="female" name="gendef" value="female">
+          <label for="female">Female</label><br>
+        <label for="cars">Country:</label>
+     <select id="countrys" name="countrys">
+     <option value="Canada">Canada</option>
+     <option value="mexico">Mexico</option>
+     <option value="usa" selected>USA</option>
+     <option value="Lisbon">Lisbon</option>
+  </select>
+    <p>Message: </p>
+  <textarea name="message" rows="10" cols="30"></textarea>
+  <br>
+    <label for="newsletter">Subscribe to newsletter: </label>
+    <input type="checkbox" id="newsletter" name="newsletter" value="newsletter"><br>
+  <label for="files">Upload file :</label>
+  <input type="file" id="files" name="files" multiple><br>
+     <label for="birthday">Birthdate:</label>
+     <input type="date" id="birthday" name="birthday"><br>
+  <label for="favcolor">Favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor" value="000000"><br>
+    <label for="website">Personal Website:</label>
+    <input type="text" id="website" name="website"  placeholder="website.com"><br>
+
+  <button type="submit" value="Submit">Submit</button>
+  <button type="reset" value="Reset">Reset</button>
+
+
+    </form> 
+</body>
+</html>
