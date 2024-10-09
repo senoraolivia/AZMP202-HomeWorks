@@ -1,0 +1,149 @@
+/* Task 1- Birinci animal sinifli elementi sarı edir */
+.animal:nth-child(1) {
+    background-color: yellow;
+}
+
+/* Task 2- İkinci device sinifli elementi mavi rəng edir*/
+.device:nth-child(2) {
+    background-color: blue;
+}
+
+/* Task 3-vehicle sinifli elementin içindəki bütün span elementlərini yaşıl rəng edir */
+.vehicle span {
+    background-color: green;
+}
+
+/* Task 4- weather ID-li elementin içindəki span elementinin mətnini qırmızı rəng edir*/
+#weather span {
+    color: red;
+}
+
+/* Task 5-stationery ID-li elementin içindəki span elementini çəhrayı rəng edir */
+#stationery span {
+    background-color: pink;
+}
+
+/* Task 6-furniture ID-li elementin içindəki span elementini sarı rəng edir */
+#furniture span {
+    background-color: yellow;
+}
+
+/* Task 7- creature ID-li elementin içindəki span elementini yaşıl rəng edir*/
+#creature span {
+    color:violet;
+}
+
+/* Task 8-nature ID-li elementin ikinci span elementini yaşıl rəng edir */
+#nature span:nth-child(2) {
+    background-color: green;
+}
+
+/* Task 9- transport ID-li elementin içindəki span elementinin mətnini mavi rəng edir*/
+#transport span {
+    color: blue;
+}
+
+/* Task 10-space ID-li elementin ikinci span elementinin fonunu boz rəng edir */
+#space span:nth-child(2) {
+    background-color: gray;
+}
+
+/* Task 11- creature ID-li elementin içindəki bütün span elementlərinin mətnini qara rəng edir */
+#creature span {
+    color: black;
+}
+
+/* Task 12-fruit ID-li elementin içindəki span elementlərinin mətnini qırmızı rəng edir*/
+#fruit span {
+    color: red;
+}
+
+/* Task 13- sport ID-li elementin içindəki span elementinin fonunu narıncı rəng edir*/
+#sport span {
+    background-color: orange;
+}
+
+/* Task 14-furniture ID-li elementin içindəki span elementlərinin mətnini yaşıl rəng edir */
+#furniture span {
+    color: green;
+}
+
+/* Task 15-animal ID-li elementin içindəki span elementinin fonunu qəhvəyi rəng edir*/
+#animal span {
+    background-color: brown;
+}
+
+/* Task 16-Birinci device sinifli elementi yaşıl rəng edir */
+.device:nth-child(1) {
+    background-color: blue;
+}
+
+/* Task 17- nature ID-li elementin içindəki bütün span elementlərinin mətnini yaşıl rəng edir*/
+#nature span {
+    color: grey;
+}
+
+/* Task 18-creature ID-li elementin ikinci span elementinin mətnini yaşıl rəng edir*/
+#creature span:nth-child(2) {
+    color: green;
+}
+
+/* Task 19- space ID-li elementin birinci span elementinin mətnini mavi rəng edir */
+#space span:nth-child(1) {
+    color: blue;
+}
+
+/* Task 20- space ID-li elementin birinci span elementinin mətnini mavi rəng edir */
+#transport span:nth-child(2) {
+    background-color: red;
+}
+
+/* Task 21-weather ID-li elementin birinci span elementinin fonunu ağ rəng edir */
+#weather span:nth-child(1) {
+    background-color: white;
+}
+
+/* Task 22- animal ID-li elementin içindəki span elementinin mətnini sarı rəng edir */
+#animal span {
+    color: yellow;
+}
+
+/* Task 23-nature ID-li elementin birinci span elementinin mətnini qırmızı rəng edir*/
+#nature span:nth-child(1) {
+    color: red;
+}
+
+/* Task 24-vehicle ID-li elementin ikinci span elementinin fonunu yaşıl rəng edir */
+#vehicle span:nth-child(2) {
+    background-color: green;
+}
+
+/* Task 25-Birinci span elementinin mətnini yaşıl rəng edir */
+span:nth-child(1) {
+    color: yellowgreen;
+}
+
+/* Task 26-stationery ID-li elementin ikinci span elementinin fonunu qırmızı rəng edir */
+#stationery span:nth-child(2) {
+    background-color: red;
+}
+
+/* Task 27-furniture ID-li elementin ikinci span elementinin fonunu sarı rəng edir */
+#furniture span:nth-child(2) {
+    background-color: yellow;
+}
+
+/* Task 28-creature ID-li elementin ikinci span elementinin fonunu yaşıl rəng edir*/
+#creature span:nth-child(2) {
+    background-color: green;
+}
+
+/* Task 29- vehicle ID-li elementin birinci span elementinin fonunu mavi rəng edir */
+#vehicle span:nth-child(1) {
+    background-color: blue;
+}
+
+/* Task 30-space ID-li elementin ikinci span elementinin fonunu sarı rəng edir */
+#space span:nth-child(2) {
+    background-color: yellow;
+}

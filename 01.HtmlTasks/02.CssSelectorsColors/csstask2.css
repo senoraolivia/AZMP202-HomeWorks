@@ -1,0 +1,35 @@
+/* Baku sözünü boş çərçivəyə almaq */
+.heading p {
+    position: relative; /* P elementinin konumunu tənzimləmək üçün */
+}
+
+.heading p::before {
+    content: ''; /* Boş çərçivə üçün məzmun */
+    border: 2px dashed black; /* Boş çərçivə - qara, xətli */
+    padding: 2px; /* İçəridə boşluq */
+    display: inline-block; /* Düzgün görünməsi üçün */
+}
+
+/* beautiful sözünü qırmızı çərçivəyə almaq */
+.red-border {
+    border: 2px solid red; /* Qırmızı çərçivə */
+    background-color: red; /* Qırmızı rənglə doldur */
+    color: white; /* Yazının görünürlüğünü artırmaq üçün */
+    padding: 2px; /* İçəridə boşluq */
+}
+
+/* A level 2 heading yazısını sarı çərçivəyə almaq */
+.yellow-border {
+    border: 2px solid yellow; /* Sarı çərçivə */
+    background-color: yellow; /* Sarı rənglə doldur */
+    padding: 2px; /* İçəridə boşluq */
+}
+
+/* Text sözünü yaşıl çərçivəyə almaq */
+.green-border {
+    border: 2px solid green; /* Yaşıl çərçivə */
+    background-color: green; /* Yaşıl rənglə doldur */
+    color: white; /* Yazının görünürlüğünü artırmaq üçün */
+    padding: 2px; /* İçəridə boşluq */
+}
+
