@@ -1,0 +1,122 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    color: white;
+}
+
+header{
+    background-image: url(https://img.lovepik.com/background/20211022/large/lovepik-black-business-background-image_401948352.jpg);
+}
+
+header .list i{
+    display: none;
+}
+
+header .list h1 {
+    color: orange;
+    font-style: italic;
+}
+
+
+.list ul{
+    display: flex;
+    gap: 20px;
+}
+
+.list ul li a{
+    color: white;
+    text-transform: capitalize;
+}
+
+.sec{
+    text-align: center;
+    padding: 100px;
+    color: white;
+}
+
+.sec h1{
+    margin-bottom: 18px;
+}
+
+.sec button{
+    background-color: yellow;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.con-2{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.con-2 .sec-1{
+    padding-top: 10px;
+} 
+
+.con-2 .sec-1 p{
+    margin-bottom: 20px;
+} 
+
+.row i{
+    font-size: 50px;
+    background-color: orange;
+    height: 90px;
+    width: 90px;
+    border: 1px solid orange;
+    border-radius: 50%;
+    color: white;
+    padding: 10px;
+    
+
+}
+
+.row img{
+    width: 100%;
+}
+
+.con-3{
+    padding-top: 60px;
+}
+
+.con-3 .sec-2 p{
+    margin-bottom: 20px;
+}
+
+.con-4 .list2 ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer{
+    padding: 50px;
+    border: 1px solid black;
+}
+
+footer .icons{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+footer .list2 ul li a{
+    color: rgb(191, 190, 190);
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1023px){
+    header .con-1 ul{
+        display: none;
+    }
+
+    header .list i{
+        display: flex;
+    }
+}
