@@ -12,18 +12,19 @@
 }
 
 header{
-    background-image: url(https://img.lovepik.com/background/20211022/large/lovepik-black-business-background-image_401948352.jpg);
+    background-image: url(https://wallpaperboat.com/wp-content/uploads/2019/06/plain-black-09.jpg.webp);
+  
 }
 
-header .list i{
+.list img {
+    width: 300px;
+    height: 50px;
+}
+
+header .list span {
     display: none;
+    font-size: 25px;
 }
-
-header .list h1 {
-    color: orange;
-    font-style: italic;
-}
-
 
 .list ul{
     display: flex;
@@ -33,6 +34,8 @@ header .list h1 {
 .list ul li a{
     color: white;
     text-transform: capitalize;
+    font-size: 24px;
+   
 }
 
 .sec{
@@ -43,6 +46,12 @@ header .list h1 {
 
 .sec h1{
     margin-bottom: 18px;
+    font-size: 60px;
+}
+.sec p {
+    margin: 20px 0;
+    font-size: 30px;
+    font-style: italic;
 }
 
 .sec button{
@@ -93,11 +102,13 @@ header .list h1 {
 .con-4 .list2 ul{
     display: flex;
     justify-content: space-evenly;
+    gap:120px;
+    margin-bottom: 10%;
 }
 
 footer{
     padding: 50px;
-    border: 1px solid black;
+   
 }
 
 footer .icons{
@@ -108,15 +119,46 @@ footer .icons{
 
 footer .list2 ul li a{
     color: rgb(191, 190, 190);
-    font-size: 20px;
+    font-size: 50px;
 }
+
+.con-5 .col-4 img {
+    border: 8px solid lightgray;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+}
+
+.con-5 {
+     margin-right:4%;
+}
+
+.con-5 h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+.sec-3 p {
+    text-align: center;
+}
+
+.con-5 p {
+    color: grey;
+}
+
+#text {
+    margin: 50px 0;
+}
+
+
+
+
 
 @media only screen and (max-width: 1023px){
     header .con-1 ul{
         display: none;
     }
 
-    header .list i{
+    header .list span{
         display: flex;
     }
 }
