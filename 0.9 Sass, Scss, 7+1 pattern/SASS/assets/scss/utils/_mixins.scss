@@ -1,0 +1,19 @@
+@mixin Flexbox ($justify:space-between,$align:center) {
+    justify-content: $justify;
+    display: flex;
+    align-items: $align;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 767px) { @content; }
+  }
+  @mixin for-tablet-only {
+    @media (max-width: 1023px) { @content; }
+  }
+ 
+  @mixin for-desktop-only {
+    @media (min-width: 1024px) { @content; }
+  }
+ 
+  
+  

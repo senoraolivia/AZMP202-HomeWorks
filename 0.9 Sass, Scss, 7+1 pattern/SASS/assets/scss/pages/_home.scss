@@ -1,0 +1,83 @@
+section {
+    background-color: $bg-color;
+
+    .con-2 {
+        
+     .sec-1 {
+        @include Flexbox();
+        padding: 5%;
+        gap:50px;
+       
+
+
+    }
+
+     .sec-2 {
+        padding-top: 10%;
+       
+        .row {
+            @include Flexbox();
+            .content {
+                #about {
+                    color: $secondary-color;
+                }
+                h1 {
+                    color: $color-dark;
+                }
+                p {
+                    padding: 3% 0;
+                }
+                button {
+                    @extend %secondary-btn;
+                
+
+                
+
+                }
+            }
+            
+           
+        }
+     }
+ }
+
+    .con-3 {
+        padding-top: 10%;
+        .row { 
+            @include Flexbox();
+            .col-4 {
+               border:1px solid $secondary-color;
+               gap:0;
+               height: 120px;
+               padding: 7%;
+            }
+        }
+    }
+
+    .con-4 { 
+        padding-top: 10%;
+        .row { 
+            @include Flexbox();
+            
+            .text1 {
+
+                h3 {
+                    padding: 6% 0;
+                }
+            #work {
+                color: $secondary-color;
+            }
+            }
+            .text2 {
+                h1 {
+                    color: $color-dark;
+                }
+                span {
+                    font-size: large;
+                }
+
+            }
+        }
+
+    }
+}

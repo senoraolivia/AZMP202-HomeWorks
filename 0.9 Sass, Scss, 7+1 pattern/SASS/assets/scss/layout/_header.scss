@@ -1,0 +1,54 @@
+header {
+     background-color: $bg-color-secondary;
+
+
+     .header {
+        height: 80px;
+        @include Flexbox();
+
+    .logo {
+
+    }
+        nav {
+
+            ul {
+                display: flex;
+                gap:4rem;
+
+               a {
+                color: $color-white;
+               }
+            }
+        }
+
+        .contact {
+            @extend %primary-btn;
+        }
+
+        .head2 {
+            position: fixed;
+            .row {
+                display: flex;
+                .titlepart {
+                    margin-top: 60px;
+                 h1 {
+                    padding: 10% 0;
+                 }
+
+                 p {
+                    color: $color-white;
+                 }
+                 .button {
+                    @extend %primary-btn;
+                 }
+                }
+
+                .imagepart {
+
+                }
+
+            }
+
+        }
+    }
+}
