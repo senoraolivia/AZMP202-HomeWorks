@@ -1,0 +1,52 @@
+header {
+    background-color: $bg-color-secondary;
+
+
+    .header {
+       height: 80px;
+       @include Flexbox();
+
+   .logo {
+
+   }
+       nav {
+
+           ul {
+               display: flex;
+               gap:4rem;
+
+              a {
+               color: $color-white;
+              }
+           }
+       }
+
+       .contact {
+           @extend %primary-btn;
+       }
+    }
+
+
+    .banner {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+             
+        }
+    }
+}
+
+section { 
+    padding-top: 10%;
+.con-2 {
+   width: 80%;
+   padding: 0 20px;
+   img {
+    margin-top: 20%;
+   }
+
+}
+
+}

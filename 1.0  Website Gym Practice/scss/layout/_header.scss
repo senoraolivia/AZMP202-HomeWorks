@@ -1,0 +1,157 @@
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    height: 150px;
+    @include for-phone-only{
+      justify-content: center;
+    }
+    .head {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      @include for-phone-only{
+        display: none;
+      }
+  
+      h3 {
+        font-size: 15px;
+        font-family: fantasy;
+      }
+      p {
+        font-size: 20px;
+        font-family: fantasy;
+      }
+      .icon {
+        display: flex;
+        gap: 10px;
+        i {
+          border: 1px solid $color1;
+          width: 50px;
+          height: auto;
+          background-color: $color1;
+          color: $color2;
+          text-align: center;
+          padding-top: 10px;
+        }
+      }
+    }
+    .head2 {
+      padding-top: 40px;
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        @include for-phone-only{
+          gap: 10px;
+         
+        }
+        
+        a {
+          li {
+            color: $color3;
+            cursor: pointer;
+            &:hover {
+              color: $color1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .banner {
+    padding-top: 150px;
+    img {
+      width: 100%;
+      opacity: 0.8;
+      position: relative;
+      @include for-phone-only {
+        justify-content: center;
+      }
+    }
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 38%;
+      text-align: center;
+      color: $color2;
+      @include for-phone-only {
+       text-align: center;
+       font-size: 10px;
+       top: 25%;
+       left: 30%;
+      }
+      h1 {
+        font-size: 40px;
+        font-family: fantasy;
+        line-height: 50px;
+        @include for-phone-only {
+          text-align: center;
+          font-size: 18px;
+          
+         }
+      }
+      p {
+        font-size: large;
+        text-align: center;
+      }
+    }
+    
+  }
+  .sec1 {
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      font-family: serif;
+      padding-top: 40px;
+    }
+    p {
+      text-align: center;
+      padding-top: 10px;
+    }
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 50px;
+      @include for-phone-only{
+        flex-direction: column;
+      }
+  
+      .row {
+        display: flex;
+        gap: 30px;
+        flex-wrap: nowrap;
+        @include for-phone-only{
+          flex-direction: column;
+        }
+        .col-4 {
+          border: none;
+          line-height: 25px;
+          box-shadow: 0 5px 30px rgba(255, 0, 0, 0.7); // Qırmızı kölgə
+          border-radius: 8px;
+          overflow: hidden;
+          padding: 20px;
+          @include for-phone-only{
+            max-width: 100%;
+          }
+  
+          img {
+            padding-left: 40%;
+            max-width: 100%;
+            height: auto;
+          }
+          h4 {
+            text-align: center;
+            font-size: 20px;
+            font-family: sans-serif;
+          }
+          p {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }

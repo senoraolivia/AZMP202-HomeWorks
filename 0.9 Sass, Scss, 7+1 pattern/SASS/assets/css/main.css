@@ -400,4 +400,43 @@ section .con-4 .row .text2 h1 {
 }
 section .con-4 .row .text2 span {
   font-size: large;
+}
+
+#section-5 {
+  padding-top: 20%;
+}
+#section-5 .con-5 .row {
+  flex-direction: row;
+}
+
+header {
+  background-color: rgb(40, 41, 62);
+}
+header .header {
+  height: 80px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+header .header nav ul {
+  display: flex;
+  gap: 4rem;
+}
+header .header nav ul a {
+  color: white;
+}
+header .banner {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  padding-top: 10%;
+}
+section .con-2 {
+  width: 80%;
+  padding: 0 20px;
+}
+section .con-2 img {
+  margin-top: 20%;
 }/*# sourceMappingURL=main.css.map */

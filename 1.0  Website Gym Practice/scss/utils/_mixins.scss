@@ -1,0 +1,11 @@
+@mixin flexbox($justify: space-around, $align: center){
+  justify-content: $justify;
+  align-items: $align;
+  display: flex;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 767px) {
+      @content;
+  }
+}
