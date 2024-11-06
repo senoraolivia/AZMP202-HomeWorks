@@ -56,6 +56,8 @@
 
 
 
+
+
 // ARRAY METHODS
 
 // #add 'Meat' in the beginning of your shopping cart if it has not been already added
@@ -233,6 +235,10 @@
 // }
 
 // console.log(companiesWithTwoOs);
+
+
+
+
 
 
 
