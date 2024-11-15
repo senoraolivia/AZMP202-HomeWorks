@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="./event.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Add Form</h1>
+            <form id="cardForm">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" required>
+
+                <label for="image">Image URL</label>
+                <input type="url" id="image" name="image" required>
+
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
+        <h1 id="title2">Products</h1>
+        <div id="cardsContainer" class="cards-container">
+        </div>
+    </div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="Product Image">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+        <p id="modalPrice"></p>
+    </div>
+</div>
+
+
+    <script src="./event.js"></script>
+</body>
+</html>
