@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
+/* Body Styling */
 body {
     display: flex;
     flex-direction: column;
@@ -13,11 +15,12 @@ body {
     padding: 20px;
 }
 
+/* Container Styling */
 .container {
-    /* max-width: 1300px; */
     width: 100%;
 }
 
+/* Form Styling */
 .form-container {
     margin-top: 50px;
     width: 100%;
@@ -27,6 +30,9 @@ body {
     margin-bottom: 20px;
 }
 
+h1 {
+    text-align: center;
+}
 .form-container h1 {
     font-size: 30px;
     color: #333;
@@ -34,10 +40,7 @@ body {
     text-align: left;
 }
 
-h1 {
-    text-align: center;
-}
-
+/* Form Labels and Inputs */
 form {
     display: flex;
     flex-direction: column;
@@ -56,6 +59,7 @@ input {
     border-radius: 5px;
 }
 
+/* Buttons */
 button {
     width: 80px;
     background-color: green;
@@ -72,6 +76,7 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Cards Styling */
 .cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -147,6 +152,7 @@ button:hover {
     background-color: #007bff;
     color: white;
 }
+
 .card-buttons #details-btn:hover {
     background-color: #0056b3;
 }
@@ -155,16 +161,18 @@ button:hover {
     background-color: #cc0000; 
     color: white;
 }
+
 .card-buttons #delete-btn:hover {
     background: darkred;
 }
 
+/* Title Styling */
 #title2 {
     font-size: 50px;
     margin: 90px 0 40px 0;
-
 }
 
+/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -227,4 +235,14 @@ button:hover {
     backdrop-filter: blur(1px);
     z-index: 9;
     display: none;
+}
+
+/* Search Input Styling */
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
 }

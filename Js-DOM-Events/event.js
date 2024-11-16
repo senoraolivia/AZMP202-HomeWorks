@@ -1,36 +1,18 @@
-let products = [
-    {
-        id: 1,
-        title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        price: 109.95,
-        description:
-            "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    },
-    {
-        id: 2,
-        title: "Mens Casual Premium Slim Fit T-Shirts ",
-        price: 22.3,
-        description:
-            "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing.",
-        image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-    },
-    {
-        id: 3,
-        title: "Mens Cotton Jacket",
-        price: 55.99,
-        description:
-            "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing.",
-        image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-    },
-];
+import { products } from "./data.js"; // Import products from data.js
 
+// Original order of products
+const originalProducts = [...products]; // Keep a copy of the original order
+
+// Function to display products
 function displayProducts(products) {
+    const cardsContainer = document.getElementById("cardsContainer");
+    cardsContainer.innerHTML = ""; // Clear existing cards
     products.forEach(product => {
         addCard(product.title, product.price, product.description, product.image);
     });
 }
 
+// Function to add a new card
 function addCard(title, price, description, image) {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -40,19 +22,100 @@ function addCard(title, price, description, image) {
 
     card.innerHTML = `
         <img src="${image}" alt="${title}">
-        <h3 title="${title}">${shortTitle}</h3>
+        <h3>${shortTitle}</h3>
         <p>${shortDescription}</p>
-        <p>Price: $${price}</p>
         <div class="card-buttons">
-            <button id="details-btn" onclick="showDetails('${image}', '${title}', '${description}')">Details</button>
-            <button id="delete-btn" onclick="deleteCard(this)">Delete</button>
+            <button id="details-btn" class="details-btn">Details</button>
+            <button id="delete-btn" class="delete-btn">Delete</button>
         </div>
     `;
+
+    card.querySelector(".details-btn").addEventListener("click", () => openModal(title, description, price, image));
+    card.querySelector(".delete-btn").addEventListener("click", () => deleteCard(card));
 
     document.getElementById("cardsContainer").appendChild(card);
 }
 
-document.getElementById("cardForm").addEventListener("submit", function(event) {
+// Function to handle search
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", function() {
+    const filteredProducts = products.filter(product => 
+        product.title.toLowerCase().includes(searchInput.value.toLowerCase())
+    );
+    displayProducts(filteredProducts);
+});
+
+// Sorting function
+let sortMode = "ASC"; // Initial sort mode
+const sortButton = document.getElementById("sortButton");
+
+sortButton.addEventListener("click", function() {
+    if (sortMode === "ASC") {
+        products.sort((a, b) => a.price - b.price);
+        sortMode = "DESC";
+        this.textContent = "Sort (DESC)";
+    } else if (sortMode === "DESC") {
+        products.sort((a, b) => b.price - a.price);
+        sortMode = "Original";
+        this.textContent = "Sort (Original)";
+    } else if (sortMode === "Original") {
+        displayProducts(originalProducts); // Restore original order
+        sortMode = "ASC";
+        this.textContent = "Sort (ASC)";
+    }
+    if (sortMode !== "Original") displayProducts(products);
+});
+
+// Function to delete a product card
+function deleteCard(card) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            card.remove(); // Remove the card if confirmed
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
+        }
+    });
+}
+
+// Modal functionality
+const modal = document.getElementById("modal");
+const modalBackdrop = document.getElementById("modalBackdrop");
+const closeModal = document.querySelector(".close");
+
+function openModal(title, description, price, image) {
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalDescription").textContent = description;
+    document.getElementById("modalPrice").textContent = `$${price}`;
+    document.getElementById("modalImage").src = image;
+
+    modal.style.display = "block";
+    modalBackdrop.style.display = "block";
+}
+
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalBackdrop.style.display = "none";
+});
+
+modalBackdrop.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalBackdrop.style.display = "none";
+});
+
+// Form validation with SweetAlert (using button click)
+const addButton = document.querySelector("form button[type='submit']");
+addButton.addEventListener("click", function(event) {
     event.preventDefault();
 
     const title = document.getElementById("title").value;
@@ -60,83 +123,24 @@ document.getElementById("cardForm").addEventListener("submit", function(event) {
     const description = document.getElementById("description").value;
     const image = document.getElementById("image").value;
 
-    addCard(title, price, description, image);
-    this.reset();
-});
-
-function showDetails(image, title, description,price) {
-    document.getElementById("modalImage").src = image;
-    document.getElementById("modalDescription").innerText = description;
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalPrice").innerText=price;
-
-    const modal = document.getElementById("modal");
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-}
-
-document.querySelector(".close").addEventListener("click", function() {
-    document.getElementById("modal").style.display = "none";
-    document.body.style.overflow = "auto";
-});
-
-function deleteCard(button) {
-    if (confirm("Are you sure?")) {
-        button.closest(".card").remove();
+    if (!title || !price || !description || !image) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
+    } else {
+        const newProduct = {
+            title,
+            price,
+            description,
+            image
+        };
+        products.push(newProduct);
+        addCard(title, price, description, image); // Add the new product card
+        document.getElementById("cardForm").reset(); // Reset form inputs
     }
-}
-
-function showDetails(image, title, description, price) {
-    const modal = document.getElementById("modal");
-    const modalImage = document.getElementById("modalImage");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalPrice = document.getElementById("modalPrice");
-
-    modalImage.src = image;
-    modalTitle.innerText = title;
-    modalDescription.innerText = description;
-    modalPrice.innerText = `Price: $${price}`; 
-
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-}
-
-document.querySelector(".close").addEventListener("click", function() {
-    document.getElementById("modal").style.display = "none";
-    document.body.style.overflow = "auto";
-});
-function showDetails(image, title, description, price) {
-    const modal = document.getElementById("modal");
-    const modalBackdrop = document.createElement("div");
-    modalBackdrop.classList.add("modal-backdrop");
-    document.body.appendChild(modalBackdrop);
-
-    const modalImage = document.getElementById("modalImage");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalPrice = document.getElementById("modalPrice");
-
-    modalImage.src = image;
-    modalTitle.innerText = title;
-    modalDescription.innerText = description;
-    modalPrice.innerText = `Price: ${price}`;
-
-    modal.style.display = "flex";
-    modalBackdrop.style.display = "block";
-    document.body.classList.add("modal-open");
-}
-
-document.querySelector(".close").addEventListener("click", function() {
-    const modal = document.getElementById("modal");
-    const modalBackdrop = document.querySelector(".modal-backdrop");
-
-    modal.style.display = "none";
-    if (modalBackdrop) {
-        modalBackdrop.style.display = "none";
-        document.body.removeChild(modalBackdrop);
-    }
-    document.body.classList.remove("modal-open");
 });
 
-displayProducts(products);
+displayProducts(products); // Initial display
