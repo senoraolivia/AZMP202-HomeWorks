@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="todo-app">
+    <div class="input-section">
+        <h1>TODO APP</h1>
+      <input id="todo-input" type="text" placeholder="Enter a todo">
+      <button id="add-button" class="btn blue">Add</button>
+    </div>
+    <div class="action-buttons">
+      <button id="all-todos" class="btn red">All Todos</button>
+      <button id="completed-todos" class="btn green">All Completed Todos</button>
+      <button id="pending-todos" class="btn yellow">All Pending Todos</button>
+      <button id="clear-all" class="btn red">Clear All</button>
+    </div>
+    <div id="todo-list"></div>
+    <div class="footer">
+      <p id="pending-count">You have 0 pending todos</p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./todo.js"></script>
+</body>
+</html>

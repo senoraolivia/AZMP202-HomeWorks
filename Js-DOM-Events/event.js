@@ -1,18 +1,15 @@
-import { products } from "./data.js"; // Import products from data.js
+import { products } from "./data.js"; 
 
-// Original order of products
-const originalProducts = [...products]; // Keep a copy of the original order
+const originalProducts = [...products]; 
 
-// Function to display products
 function displayProducts(products) {
     const cardsContainer = document.getElementById("cardsContainer");
-    cardsContainer.innerHTML = ""; // Clear existing cards
+    cardsContainer.innerHTML = ""; 
     products.forEach(product => {
         addCard(product.title, product.price, product.description, product.image);
     });
 }
 
-// Function to add a new card
 function addCard(title, price, description, image) {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -36,7 +33,6 @@ function addCard(title, price, description, image) {
     document.getElementById("cardsContainer").appendChild(card);
 }
 
-// Function to handle search
 const searchInput = document.getElementById("searchInput");
 searchInput.addEventListener("input", function() {
     const filteredProducts = products.filter(product => 
@@ -45,8 +41,7 @@ searchInput.addEventListener("input", function() {
     displayProducts(filteredProducts);
 });
 
-// Sorting function
-let sortMode = "ASC"; // Initial sort mode
+let sortMode = "ASC"; 
 const sortButton = document.getElementById("sortButton");
 
 sortButton.addEventListener("click", function() {
@@ -59,14 +54,13 @@ sortButton.addEventListener("click", function() {
         sortMode = "Original";
         this.textContent = "Sort (Original)";
     } else if (sortMode === "Original") {
-        displayProducts(originalProducts); // Restore original order
+        displayProducts(originalProducts); 
         sortMode = "ASC";
         this.textContent = "Sort (ASC)";
     }
     if (sortMode !== "Original") displayProducts(products);
 });
 
-// Function to delete a product card
 function deleteCard(card) {
     Swal.fire({
         title: "Are you sure?",
@@ -78,7 +72,7 @@ function deleteCard(card) {
         confirmButtonText: "Yes, delete it!"
     }).then((result) => {
         if (result.isConfirmed) {
-            card.remove(); // Remove the card if confirmed
+            card.remove(); 
             Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
@@ -88,7 +82,6 @@ function deleteCard(card) {
     });
 }
 
-// Modal functionality
 const modal = document.getElementById("modal");
 const modalBackdrop = document.getElementById("modalBackdrop");
 const closeModal = document.querySelector(".close");
@@ -113,7 +106,6 @@ modalBackdrop.addEventListener("click", () => {
     modalBackdrop.style.display = "none";
 });
 
-// Form validation with SweetAlert (using button click)
 const addButton = document.querySelector("form button[type='submit']");
 addButton.addEventListener("click", function(event) {
     event.preventDefault();
@@ -138,9 +130,9 @@ addButton.addEventListener("click", function(event) {
             image
         };
         products.push(newProduct);
-        addCard(title, price, description, image); // Add the new product card
-        document.getElementById("cardForm").reset(); // Reset form inputs
+        addCard(title, price, description, image); 
+        document.getElementById("cardForm").reset(); 
     }
 });
 
-displayProducts(products); // Initial display
+displayProducts(products);
