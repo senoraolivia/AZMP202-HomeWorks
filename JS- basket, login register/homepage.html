@@ -1,10 +1,54 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Include SweetAlert -->
 </head>
 <body>
-    <h1>HOME PAGE</h1>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">MORENT</span>
+    </div>
+    <div class="nav-center">
+      <input type="text" placeholder="Search cars..." class="search-input" />
+    </div>
+    <div class="nav-right">
+      <a href="register.html" id="logout-link" class="logout-link">Logout</a>
+      <button id="nav-basket" class="basket-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="basket-count">0</span>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <h1>Car Rental</h1>
+    <div id="car-grid" class="grid"></div>
+  </div>
+
+  <div id="basket" class="basket-container hidden">
+    <h2>Your Basket</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Fuel</th>
+          <th>Passengers</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="basket-table-body"></tbody>
+    </table>
+    <button id="back" class="basket-button">Back to Cars</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
 </body>
 </html>
