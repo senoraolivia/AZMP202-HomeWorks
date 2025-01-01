@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 import FilterButtons from './components/FilterButtons'
 import styles from './App.module.css'
+import Swal from 'sweetalert2'
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem('todos')
+    return savedTodos ? JSON.parse(savedTodos) : []
+  })
   const [filter, setFilter] = useState('all')
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const addTodo = (text) => {
     if (text.trim()) {
@@ -35,7 +43,30 @@ function App() {
   }
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id))
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setTodos(todos.filter(todo => todo.id !== id))
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your task has been deleted.",
+          icon: "success"
+        });
+      }
+    });
+  }
+
+  const editTodo = (id, newText) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, text: newText } : todo
+    ))
   }
 
   const clearAll = () => {
@@ -63,6 +94,7 @@ function App() {
         todos={filteredTodos}
         onToggle={toggleTodo}
         onDelete={deleteTodo}
+        onEdit={editTodo}
       />
       <div className={styles.status}>
         You have <span className={styles.count}>{pendingCount}</span> pending todos
