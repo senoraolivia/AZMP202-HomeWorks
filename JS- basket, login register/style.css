@@ -1,110 +1,191 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
-.register-container,
-.login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
-
 
 h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    display: block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
+.card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333;
+.card .info {
+  margin-top: 10px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #007bff;
-    outline: none;
+.card h3 {
+  margin: 10px 0 5px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.card .details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.card .price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+.basket-container {
+  padding: 20px;
+  background: #fff;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.basket-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.basket-button:hover {
+  background-color: #0056b3;
 }
 
 
-a {
-    color: #007bff;
-    text-decoration: none;
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-a:hover {
-    text-decoration: underline;
+.nav-left .logo {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-
-p {
-    text-align: center;
-    font-size: 14px;
-    color: #666;
+.nav-center .search-input {
+  width: 300px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
 
-
-.register-container {
-    max-width: 400px;
+.nav-right .basket-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
 }
 
-
-.login-container {
-    max-width: 400px;
+.basket-icon:hover {
+  color: #d9d9d9;
 }
 
+.basket-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 0 1 calc(25% - 20px); 
+  order: 1;
+  transition: all 0.3s ease;
+}
+
+.logout-link {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.logout-link:hover {
+  color: #007BFF;
+}
