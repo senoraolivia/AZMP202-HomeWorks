@@ -1,0 +1,24 @@
+ div { 
+  margin-bottom: 300px !important;
+  position: relative;
+  width: 100%;
+  nav {
+  padding: 1rem;
+  background: darkred;
+
+  ul {
+    display: flex;
+    gap: 3rem;
+    li {
+      list-style-type: none;
+      a {
+        
+        color: white !important;
+      }
+    }
+    
+  }
+}
+ }
+  
+  
