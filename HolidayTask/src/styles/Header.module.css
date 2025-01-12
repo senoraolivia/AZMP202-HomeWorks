@@ -1,0 +1,27 @@
+.header {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navList li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navList li a:hover {
+    text-decoration: underline;
+  }
+  
+  

@@ -1,0 +1,15 @@
+@mixin mobile {
+    @media (max-width: #{$mobile-breakpoint - 1px}) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: #{$desktop-breakpoint}) {
+      @content;
+    }
+  }
+  
+  // Add more mixins as needed
+  
+  

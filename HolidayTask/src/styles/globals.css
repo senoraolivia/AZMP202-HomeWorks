@@ -1,0 +1,29 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    /* Add any global mobile styles here */
+  }
+  
+  @media (min-width: 1024px) {
+    /* Add any global desktop styles here */
+  }
+  
+  
