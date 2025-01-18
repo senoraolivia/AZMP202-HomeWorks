@@ -1,23 +1,56 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Skills from './components/Skills';
-import Achievements from './components/Achievements';
-import Experiences from './components/Experiences';
-import Footer from './components/Footer';
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import AboutMe from './Components/About Me';
+import Footer from './Components/Footer';
+import MyProjects from './Components/MyProjects';
+import BestTeachers from './Components/MyTeachers';
+import Nawbar from './Components/Nawbar';
+// import Proficiency from './Components/Proficiency';
+import Skills from './Components/Skills';
+import Loader from './Components/Loading';
+import SendMessage from './Components/YourMessage';
+import MyCertificates from './Components/Certificates';
+import MyCurses from './Components/Education';
+ 
 
-export default function App() {
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); 
+    }, 3000); 
+
+    return () => clearTimeout(timer); 
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow pt-16">
-        <About />
-        <Skills />
-        <Achievements />
-        <Experiences />
-      </main>
-      <Footer />
-    </div>
+    <>
+      {isLoading ? (
+        <Loader /> 
+      ) : (
+        <>
+          <Nawbar />
+             {/* <ThemeToggle /> */}
+          <div className="all-sections">
+            <AboutMe />
+            <BestTeachers />
+            <Skills />
+            <Proficiency />
+            <MyProjects />
+            <MyCertificates />
+            <MyCurses />
+            <SendMessage />
+          </div>
+
+       
+
+          <Footer />
+        </>
+      )}
+    </>
   );
 }
+
+export default App;
 

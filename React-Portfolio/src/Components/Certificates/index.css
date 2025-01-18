@@ -1,0 +1,24 @@
+  .left-part {
+    position: relative;
+    width: 100%; 
+    bottom: 200px;
+  }
+  
+  .left-part img {
+    position: absolute;
+    top: 0; 
+    right: 0;
+  }
+  
+  .left-part img:first-child {
+     top: 60px; 
+     right: 130px;
+     z-index: 1; 
+  }
+  
+  .left-part img:nth-child(2) {
+    z-index: 0; 
+  }
+  .div-all{
+    margin: 3rem 0;
+  }

@@ -1,0 +1,27 @@
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+  }
+ 
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  .theme-toggle-btn:focus {
+    outline: none;
+  }
+  
+  
