@@ -1,0 +1,24 @@
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+  
+.span {
+    color: #ffa600; 
+}
+  
+.nav-link {
+    color: #000 !important;
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+  
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: white; 
+    box-shadow: 0 4px 2px -2px gray; 
+  }
+
+  

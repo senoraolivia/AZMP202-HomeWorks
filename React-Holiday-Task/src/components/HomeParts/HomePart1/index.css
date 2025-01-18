@@ -1,0 +1,28 @@
+.btn{
+    border-radius: none;
+    padding: 12px;
+    margin-right: 7px;
+    border: 1px solid white;
+}
+
+.btn1 {
+    color: #fff;
+}
+.btn1:hover{
+    background-color: #fff;
+     color: #000;
+}
+.logo-img{
+    color: #fff;
+    font-size: 5rem;
+}   
+
+.btn2 {
+    background: white;
+    color: black !important;
+}
+
+.btn2:hover {
+    background: transparent;
+    color: white;
+}
