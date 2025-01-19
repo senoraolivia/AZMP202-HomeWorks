@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import { FavouritesContext } from '../context/FavouritesContext';
 import productsData from '../data/productsData';
 
+
 const HomePage = () => {
   const { favourites, addToFavourites, removeFromFavourites } = useContext(FavouritesContext);
 
@@ -11,7 +12,7 @@ const HomePage = () => {
       <h1>Home Page</h1>
       <div className="product-cards">
         {productsData.map((product) => (
-          <ProductCard 
+          <ProductCard  className="card"
             key={product.id} 
             product={product}
             isFavourite={favourites.includes(product.id)}
